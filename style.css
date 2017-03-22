@@ -1,0 +1,10 @@
+.jumbotron {
+    opacity: .8;
+}
+body {
+    background-image: url("trainStation.jpg");
+    padding-top: 20px;
+    background-size: cover;
+}
+
+
