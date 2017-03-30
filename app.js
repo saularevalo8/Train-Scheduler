@@ -41,17 +41,17 @@ $("#addButton").on("click", function(event) {
 });
 
 DB.ref().on("child_added", function(Snapshot) {
-    var name = Snapshot.val().name;
-    var destination = Snapshot.val().destination;
-    var start = Snapshot.val().start;
-    var convertedStartTime = moment(convertedStartTime).subtract(1, "years").format("MMM DD, YYYY hh:mm A");
-    var frequency = Snapshot.val().frequency;
-    var difference = moment().diff(start, "minutes");
-    var remainder = difference % frequency;
-    var minutes = frequency - remainder;
-    var next = moment().add(minutes, "minutes").format("hh:mm A");
+    var nam = Snapshot.val().name;
+    var dest = Snapshot.val().destination;
+    var star = Snapshot.val().start;
+    var convertedTime = moment(convertedTime).subtract(1, "years").format("MMM DD, YYYY hh:mm A");
+    var freq = Snapshot.val().frequency;
+    var diff = moment().diff(star, "minutes");
+    var remain = diff % freq;
+    var min = freq - remain;
+    var nextTime = moment().add(min, "minutes").format("hh:mm A");
     
-    $("#train-table > tbody").append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" +
-        frequency + "</td><td>" + next + "</td><td>" + minutes + "</td></tr>");
+    $("#train-table > tbody").append("<tr><td>" + nam + "</td><td>" + dest + "</td><td>" +
+        freq + "</td><td>" + nextTime + "</td><td>" + min + "</td></tr>");
 
 });
